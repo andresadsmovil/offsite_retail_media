@@ -2,11 +2,11 @@ view: retail_media_offsite {
   sql_table_name: `sources.retail_media_offsite` ;;
 
   dimension: advertiser_id {
-    type: number
+    type: string
     sql: ${TABLE}.advertiser_id ;;
   }
   dimension: campaign_id {
-    type: number
+    type: string
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: category_name {
@@ -58,7 +58,7 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.ads_sales ;;
   }
-  dimension_group: month {
+  dimension_group: date_impression {
     type: time
     timeframes: [raw, date, week, month, quarter, year]
     convert_tz: no
