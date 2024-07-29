@@ -77,6 +77,6 @@ explore: purchase_events {
     }
 }
 
-explore: retail_media_offside {}
+explore: retail_media_offsite {}
 
 explore: sku_farmatodo {}
