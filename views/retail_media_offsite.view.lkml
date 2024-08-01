@@ -5,9 +5,17 @@ view: retail_media_offsite {
     type: string
     sql: ${TABLE}.advertiser_id ;;
   }
+  dimension: advertiser_name{
+    type: string
+    sql: ${TABLE}.advertiser_name ;;
+  }
   dimension: campaign_id {
     type: string
     sql: ${TABLE}.campaign_id ;;
+  }
+  dimension: campaign_name {
+    type: string
+    sql: ${TABLE}.campaign_name ;;
   }
   dimension: category_name {
     type: string
