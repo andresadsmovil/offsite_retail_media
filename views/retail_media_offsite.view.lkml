@@ -1,5 +1,5 @@
 view: retail_media_offsite {
-  sql_table_name: `sources.retail_media_offsite` ;;
+  sql_table_name: `reports_generated.retail_media_offsite` ;;
 
   dimension: advertiser_id {
     type: string
@@ -11,7 +11,7 @@ view: retail_media_offsite {
   }
   dimension: campaign_id {
     type: string
-    sql: ${TABLE}.campaign_id ;;
+    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
   }
   dimension: campaign_name {
     type: string
