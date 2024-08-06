@@ -5,6 +5,11 @@ view: retail_media_offsite {
     type: string
     sql: ${TABLE}.advertiser_id ;;
   }
+  dimension: win_att {
+    type: string
+    sql: ${TABLE}.win_att ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
+  }
   dimension: advertiser_name{
     type: string
     sql: ${TABLE}.advertiser_name ;;
@@ -16,10 +21,12 @@ view: retail_media_offsite {
   dimension: campaign_name {
     type: string
     sql: ${TABLE}.campaign_name ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: category_name {
     type: string
     sql: ${TABLE}.category_name ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: cid {
     type: string
@@ -88,6 +95,7 @@ view: retail_media_offsite {
   dimension: trademark_name {
     type: string
     sql: ${TABLE}.trademark_name ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: day_name {
     type: string
