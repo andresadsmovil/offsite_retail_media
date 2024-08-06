@@ -56,7 +56,7 @@ view: retail_media_offsite {
   dimension: image_url {
     type: string
     sql: ${TABLE}.image_url;;
-    html: <img src='{{ value }}' width='80' height='80'>;;
+    html: <img src='{{ value }}' width='60' height='60'>;;
   }
   dimension: impressions {
     type: number
@@ -190,4 +190,5 @@ view: retail_media_offsite {
     sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN ${total_price_local} ELSE NULL END ;;
     value_format: "$#,##0"
   }
+
 }
