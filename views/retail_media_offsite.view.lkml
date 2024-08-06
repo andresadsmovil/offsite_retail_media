@@ -64,7 +64,7 @@ view: retail_media_offsite {
   }
   dimension: investment {
     type: number
-    sql: ${TABLE}.ads_sales ;;
+    sql: ${TABLE}.ads_spend ;;
   }
   dimension_group: date_impression {
     type: time
@@ -76,6 +76,14 @@ view: retail_media_offsite {
   dimension: product_name {
     type: string
     sql: ${TABLE}.product_name ;;
+  }
+  dimension: account_id {
+    type: string
+    sql: CAST(${TABLE}.account_id AS STRING);;
+  }
+  dimension: account_name {
+    type: string
+    sql: ${TABLE}.account_name ;;
   }
   dimension: trademark_name {
     type: string
@@ -111,7 +119,7 @@ view: retail_media_offsite {
   }
   dimension: total_price_local {
     type: number
-    sql: ${TABLE}.attibution_sales ;;
+    sql: ${TABLE}.attribution_sales ;;
   }
   dimension: user_id {
     type: number
