@@ -117,6 +117,10 @@ view: retail_media_offsite {
     type: string
     sql: ${TABLE}.subcategory ;;
   }
+  dimension: advertiser_internal_id {
+    type: string
+    sql: CAST(${TABLE}.advertiser_internal_id  AS STRING);;
+  }
   dimension: total_price_local {
     type: number
     sql: ${TABLE}.attribution_sales ;;
@@ -190,5 +194,4 @@ view: retail_media_offsite {
     sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN ${total_price_local} ELSE NULL END ;;
     value_format: "$#,##0"
   }
-
 }
