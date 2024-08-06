@@ -26,7 +26,6 @@ view: retail_media_offsite {
   dimension: category_name {
     type: string
     sql: ${TABLE}.category_name ;;
-    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: cid {
     type: string
@@ -95,7 +94,7 @@ view: retail_media_offsite {
   dimension: trademark_name {
     type: string
     sql: ${TABLE}.trademark_name ;;
-    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
+ ##   html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: day_name {
     type: string
