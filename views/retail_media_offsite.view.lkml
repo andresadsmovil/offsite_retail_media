@@ -136,13 +136,13 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.unique_users ;;
   }
+  dimension: user_acum {
+    type: number
+    sql: ${TABLE}.unique_users_acum ;;
+  }
   dimension: unique_events {
     type: number
     sql: ${TABLE}.unique_events ;;
-  }
-  dimension: video_completes {
-    type: number
-    sql: ${TABLE}.video_completes ;;
   }
   measure: count {
     type: count
@@ -166,6 +166,12 @@ view: retail_media_offsite {
     sql: ${user_id} ;;
     value_format: "#,##0"
     }
+  measure: sum_user_acum {
+    group_label: "Measures"
+    type: sum
+    sql: ${user_acum} ;;
+    value_format: "#,##0"
+  }
   measure: sum_impressions {
     group_label: "Measures"
     type: sum
