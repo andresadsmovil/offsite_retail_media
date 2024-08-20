@@ -1,7 +1,8 @@
-connection: "all_report"
+connection: "farmatodo_sources"
 
 # include all the views
 include: "/views/**/*.view.lkml"
+include: "/**/*.dashboard"
 
 datagroup: all_report_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
