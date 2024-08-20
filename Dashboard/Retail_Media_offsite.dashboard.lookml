@@ -8,7 +8,7 @@
   elements:
   - title: Ads spend
     name: Ads spend
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_investment]
