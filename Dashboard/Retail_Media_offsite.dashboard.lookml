@@ -43,7 +43,7 @@
     height: 2
   - title: Attribution sales
     name: Attribution sales
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_total_price_local]
@@ -81,7 +81,7 @@
     height: 2
   - title: ROAS
     name: ROAS
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.event_product_bought_total_price_local, retail_media_offsite.sum_investment]
@@ -127,7 +127,7 @@
     height: 2
   - title: Metrics over time
     name: Metrics over time
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.sum_investment, retail_media_offsite.sum_unique_user,
@@ -230,7 +230,7 @@
     height: 2
   - title: Unique Users
     name: Unique Users
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_unique_user]
@@ -278,7 +278,7 @@
     height: 2
   - title: clicks
     name: clicks
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_clicks]
@@ -326,7 +326,7 @@
     height: 2
   - title: Impressions
     name: Impressions
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_impressions]
@@ -373,7 +373,7 @@
     height: 2
   - title: Product Viewed
     name: Product Viewed
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.event_Product_Viewed, retail_media_offsite.event_product_bought,
@@ -431,7 +431,7 @@
     height: 2
   - title: Product Added
     name: Product Added
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.event_product_bought, retail_media_offsite.event_Product_Added]
@@ -487,7 +487,7 @@
     height: 2
   - title: Product Bought
     name: Product Bought
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.event_product_bought]
@@ -553,7 +553,7 @@
     height: 1
   - title: Creative
     name: Creative
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: table
     fields: [retail_media_offsite.creative_id, retail_media_offsite.image_url, retail_media_offsite.size,
@@ -676,7 +676,7 @@
     height: 2
   - title: Ads Spend Over time by Creatived
     name: Ads Spend Over time by Creatived
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.creative_id, retail_media_offsite.sum_investment,
@@ -756,7 +756,7 @@
     height: 7
   - title: Attribution Sales Over time by Creatived
     name: Attribution Sales Over time by Creatived
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.sum_total_price_local, retail_media_offsite.creative_id,
@@ -845,7 +845,7 @@
     height: 1
   - title: Category
     name: Category
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_bar
     fields: [retail_media_offsite.event_product_bought_total_price_local, retail_media_offsite.category_name]
@@ -933,7 +933,7 @@
     height: 9
   - title: Metrics over time Sales
     name: Metrics over time Sales
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.event_Product_Added, retail_media_offsite.event_product_bought,
@@ -1015,7 +1015,7 @@
     height: 7
   - title: Products
     name: Products
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_bar
     fields: [retail_media_offsite.event_product_bought_total_price_local, retail_media_offsite.product_name]
@@ -1120,7 +1120,7 @@
     height: 2
   - title: General
     name: General
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: table
     fields: [retail_media_offsite.trademark_name, retail_media_offsite.category_name,
@@ -1226,7 +1226,7 @@
     height: 2
   - title: CPAC
     name: CPAC
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_investment, retail_media_offsite.event_product_bought,
@@ -1293,7 +1293,7 @@
     height: 2
   - title: CPPV
     name: CPPV
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_investment, retail_media_offsite.event_Product_Viewed,
@@ -1369,7 +1369,7 @@
     height: 1
   - title: Indicators by day of the week
     name: Indicators by day of the week
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.event_Product_Added, retail_media_offsite.event_product_bought,
@@ -1451,7 +1451,7 @@
     height: 7
   - title: Indicators by time of day
     name: Indicators by time of day
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_line
     fields: [retail_media_offsite.event_Product_Added, retail_media_offsite.event_product_bought,
@@ -1533,7 +1533,7 @@
     height: 7
   - title: Trademark name
     name: Trademark name
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: looker_bar
     fields: [retail_media_offsite.event_product_bought_total_price_local, retail_media_offsite.trademark_name]
@@ -1626,7 +1626,7 @@
     height: 9
   - title: CPUI
     name: CPUI
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_investment, retail_media_offsite.sum_unique_user]
@@ -1691,7 +1691,7 @@
     height: 2
   - title: CPUV
     name: CPUV
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.sum_investment, retail_media_offsite.event_product_bought]
@@ -1792,7 +1792,7 @@
     height: 2
   - title: Ads spend (Copy)
     name: Ads spend (Copy)
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.campaign_name]
@@ -1838,7 +1838,7 @@
     height: 1
   - title: Ads spend (Copy 2)
     name: Ads spend (Copy 2)
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.trademark_name]
@@ -1876,7 +1876,7 @@
     height: 2
   - title: Win Att
     name: Win Att
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     type: single_value
     fields: [retail_media_offsite.win_att]
@@ -1921,7 +1921,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Advertiser Internal ID, Trademark Name,
       Campaign ID, Cid, Product Name, Date Impression Date, Win Att]
@@ -1935,7 +1935,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Retailer, Advertiser Internal ID, Trademark Name, Campaign
         ID, Cid, Product Name, Date Impression Date, Win Att]
@@ -1950,7 +1950,7 @@
       type: advanced
       display: popover
       options: []
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Trademark Name, Campaign ID, Cid,
       Product Name, Date Impression Date, Win Att]
@@ -1964,7 +1964,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Advertiser Internal ID, Campaign
         ID, Cid, Product Name, Date Impression Date, Win Att]
@@ -1978,7 +1978,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Advertiser Internal ID, Trademark
         Name, Cid, Product Name, Date Impression Date, Win Att]
@@ -1992,7 +1992,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Advertiser Internal ID, Trademark
         Name, Campaign ID, Product Name, Date Impression Date, Win Att]
@@ -2006,7 +2006,7 @@
     ui_config:
       type: tag_list
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Advertiser Internal ID, Trademark
         Name, Campaign ID, Cid, Date Impression Date, Win Att]
@@ -2020,7 +2020,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: [Advertiser Name, Retailer, Advertiser Internal ID, Trademark
         Name, Campaign ID, Cid, Product Name, Date Impression Date, Win Att]
@@ -2035,7 +2035,7 @@
       type: relative_timeframes
       display: inline
       options: []
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: []
     field: retail_media_offsite.date_impression_date
@@ -2048,7 +2048,7 @@
     ui_config:
       type: advanced
       display: popover
-    model: all_retail_media
+    model: retail_media_offsite
     explore: retail_media_offsite
     listens_to_filters: []
     field: retail_media_offsite.win_att
