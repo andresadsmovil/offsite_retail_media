@@ -90,6 +90,7 @@ view: retail_media_offsite {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.date_create ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
   }
   dimension: product_name {
     type: string
