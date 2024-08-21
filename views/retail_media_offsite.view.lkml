@@ -28,6 +28,10 @@ view: retail_media_offsite {
     type: string
     sql: ${TABLE}.category_name ;;
   }
+  dimension: creative_name {
+    type: string
+    sql: ${TABLE}.creative_name ;;
+  }
   dimension: cid {
     type: string
     sql: ${TABLE}.cid ;;
@@ -79,6 +83,13 @@ view: retail_media_offsite {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.date_impression ;;
+  }
+  dimension_group: date_create {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date_create ;;
   }
   dimension: product_name {
     type: string
@@ -137,6 +148,10 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.unique_users ;;
   }
+  dimension: user_acum {
+    type: number
+    sql: ${TABLE}.unique_users_acum ;;
+  }
   dimension: unique_events {
     type: number
     sql: ${TABLE}.unique_events ;;
@@ -154,6 +169,12 @@ view: retail_media_offsite {
     type: sum
     sql: ${investment} ;;
     value_format: "$#,##0"
+  }
+  measure: sum_user_acum {
+    group_label: "Measures"
+    type: sum
+    sql: ${user_acum} ;;
+    value_format: "#,##0"
   }
   measure: sum_total_price_local {
     group_label: "Measures"
