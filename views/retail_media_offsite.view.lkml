@@ -149,6 +149,14 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.unique_users ;;
   }
+  dimension: cpm {
+    type: number
+    sql: ${TABLE}.cpm ;;
+  }
+  dimension: cpc {
+    type: number
+    sql: ${TABLE}.cpc ;;
+  }
   dimension: user_acum {
     type: number
     sql: ${TABLE}.unique_users_acum ;;
@@ -198,6 +206,16 @@ view: retail_media_offsite {
     group_label: "Measures"
     type: sum
     sql: ${clicks} ;;
+  }
+  measure: max_cpc {
+    group_label: "Measures"
+    type: sum
+    sql: ${cpc} ;;
+  }
+  measure: max_cpm {
+    group_label: "Measures"
+    type: max
+    sql: ${cpm} ;;
   }
   measure: sum_unique_events {
     group_label: "Measures"
