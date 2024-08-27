@@ -2,6 +2,12 @@ view: retail_media_offsite {
 
   sql_table_name: `reports_generated.retail_media_offsite` ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: concat(${TABLE}.advertiser_id, '-', ${TABLE}.campaign_id, '-', ${TABLE}.win_att);;
+  }
+
   dimension: advertiser_id {
     type: string
     sql: ${TABLE}.advertiser_id ;;

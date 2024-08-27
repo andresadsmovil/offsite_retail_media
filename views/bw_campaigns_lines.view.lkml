@@ -1,6 +1,13 @@
 view: bw_campaigns_lines {
   sql_table_name: `adsmovil-produccion.Beeswax_Campaign_Details.bw_campaigns_lines` ;;
 
+
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: concat(${TABLE}.advertiser_id, '-', ${TABLE}.campaign_id);;
+  }
+
   dimension: account_id {
     type: number
     sql: ${TABLE}.account_id ;;
@@ -59,7 +66,7 @@ view: bw_campaigns_lines {
   }
   dimension: campaign_id {
     type: number
-    sql: ${TABLE}.campaign_id ;;
+     sql: CAST(${TABLE}.campaign_id AS STRING) ;;
   }
   dimension: campaign_max_bid {
     type: number
@@ -253,5 +260,11 @@ view: bw_campaigns_lines {
   measure: count {
     type: count
     drill_fields: [line_item_name, campaign_name]
+  }
+  measure: max_total_sales {
+    group_label: "Measures"
+    type: max
+    sql: ${total_sales} ;;
+    value_format: "#,##0"
   }
 }
