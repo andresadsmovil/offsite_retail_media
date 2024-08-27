@@ -207,15 +207,15 @@ view: retail_media_offsite {
     type: sum
     sql: ${clicks} ;;
   }
-  measure: max_cpc {
-    group_label: "Measures"
-    type: sum
-    sql: ${cpc} ;;
-  }
   measure: max_cpm {
     group_label: "Measures"
     type: max
     sql: ${cpm} ;;
+  }
+  measure: max_cpc {
+    group_label: "Measures"
+    type: max
+    sql: ${cpc} ;;
   }
   measure: sum_unique_events {
     group_label: "Measures"

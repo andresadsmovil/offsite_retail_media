@@ -13,4 +13,7 @@ datagroup: all_report_default_datagroup {
 persist_with: all_report_default_datagroup
 
 
+explore: bw_campaigns_lines {}
+
+
 explore: retail_media_offsite {}
