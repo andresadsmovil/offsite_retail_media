@@ -217,6 +217,7 @@ view: retail_media_offsite {
     group_label: "Measures"
     type: max
     sql: ${cpm} ;;
+    value_format: "$#,##0"
   }
   measure: max_cpc {
     group_label: "Measures"
