@@ -30,3 +30,5 @@ explore: retail_media_offsite {
   }
   # Dimensiones y medidas de productos
 }
+
+explore: report_retail_media_chiper {}

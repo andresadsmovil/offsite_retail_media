@@ -79,6 +79,10 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.impressions ;;
   }
+  dimension: total_sales {
+    type: number
+    sql: ${TABLE}.total_sales ;;
+  }
   dimension: investment {
     type: number
     sql: ${TABLE}.ads_spend ;;
@@ -215,14 +219,19 @@ view: retail_media_offsite {
   }
   measure: max_cpm {
     group_label: "Measures"
-    type: max
+    type: average
     sql: ${cpm} ;;
     value_format: "$#,##0"
   }
   measure: max_cpc {
     group_label: "Measures"
-    type: max
+    type: average
     sql: ${cpc} ;;
+  }
+  measure: max_total_sales {
+    group_label: "Measures"
+    type: max
+    sql: ${total_sales} ;;
   }
   measure: sum_unique_events {
     group_label: "Measures"
@@ -231,17 +240,17 @@ view: retail_media_offsite {
   }
   measure: event_Product_Added {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Added' THEN ${product_units} ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} = 'Product Added' THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_Product_Viewed {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Viewed' THEN ${product_units} ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} = 'Product Viewed' THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN ${product_units} ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought_total_price_local {
