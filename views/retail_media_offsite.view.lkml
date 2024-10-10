@@ -179,6 +179,10 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.video_completes ;;
   }
+  dimension: quantity {
+    type: number
+    sql: ${TABLE}.quantity ;;
+  }
   measure: count {
     type: count
     drill_fields: [category_name, product_name, event_name]
@@ -257,5 +261,11 @@ view: retail_media_offsite {
     type: sum
     sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN ${total_price_local} ELSE NULL END ;;
     value_format: "$#,##0"
+  }
+  measure: max_quantity {
+    group_label: "Measures"
+    type: max
+    sql: ${quantity} ;;
+    value_format: "#,##0"
   }
 }
