@@ -139,6 +139,11 @@ view: retail_media_offsite {
     type: string
     sql: ${TABLE}.size ;;
   }
+  dimension: sales_model {
+    type: string
+    sql: ${TABLE}.sales_model ;;
+    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
+  }
   dimension: spend_bw {
     type: number
     sql: ${TABLE}.spend_bw ;;
@@ -221,13 +226,13 @@ view: retail_media_offsite {
     type: sum
     sql: ${clicks} ;;
   }
-  measure: max_cpm {
+  measure: maxcpm {
     group_label: "Measures"
     type: average
     sql: ${cpm} ;;
     value_format: "$#,##0"
   }
-  measure: max_cpc {
+  measure: maxcpc {
     group_label: "Measures"
     type: average
     sql: ${cpc} ;;
@@ -268,4 +273,27 @@ view: retail_media_offsite {
     sql: ${quantity} ;;
     value_format: "#,##0"
   }
+  measure: max_cpm {
+    type: number
+    sql:
+    case
+      when max(${sales_model}) = 'CPM' then ${maxcpm}
+      when max(${sales_model}) = 'CPC'then (${sum_investment}/${sum_impressions}) * 1000
+      else ${maxcpm}
+
+    end ;;
+    value_format: "$#,##0"
+  }
+  measure: max_cpc {
+    type: number
+    sql:
+    case
+      when max(${sales_model}) = 'CPC' then ${maxcpc}
+      when max(${sales_model}) = 'CPM'then (${sum_investment}/${sum_clicks})
+      else ${maxcpc}
+
+    end ;;
+    value_format: "$#,##0"
+  }
+
 }
