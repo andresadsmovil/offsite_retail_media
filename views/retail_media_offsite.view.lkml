@@ -15,7 +15,7 @@ view: retail_media_offsite {
   dimension: win_att {
     type: string
     sql: ${TABLE}.win_att ;;
-    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
+    html: <H4 style= <div style="font-size: 15px; text-align: center;">{{value}}</H3>;;
   }
   dimension: advertiser_name{
     type: string
@@ -100,7 +100,7 @@ view: retail_media_offsite {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.date_create ;;
-    html: <H4 style= <div style="font-size: 20px; text-align: center;">{{value}}</H4>;;
+     html: <H4 style= <div style="font-size: 15px; text-align: center;">{{value}}</H3>;;
   }
   dimension: product_name {
     type: string
