@@ -239,7 +239,7 @@ view: retail_media_offsite {
   }
   measure: max_total_sales {
     group_label: "Measures"
-    type: max
+    type: sum
     sql: ${total_sales} ;;
   }
   measure: sum_unique_events {
