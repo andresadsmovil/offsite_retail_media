@@ -241,6 +241,8 @@ view: retail_media_offsite {
     group_label: "Measures"
     type: sum
     sql: ${total_sales} ;;
+    value_format: "$#,##0"
+
   }
   measure: sum_unique_events {
     group_label: "Measures"
