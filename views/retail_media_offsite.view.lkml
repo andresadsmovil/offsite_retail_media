@@ -121,7 +121,14 @@ view: retail_media_offsite {
   }
   dimension: day_name {
     type: string
-    sql: ${TABLE}.day_name ;;
+    sql:  CASE WHEN ${TABLE}.day_name = 'Monday' THEN '1 Monday'
+          WHEN ${TABLE}.day_name = 'Tuesday' THEN '2 Tuesday'
+          WHEN ${TABLE}.day_name = 'Wednesday' THEN '3 Wednesday'
+          WHEN ${TABLE}.day_name = 'Thursday' THEN '4 Thursday'
+          WHEN ${TABLE}.day_name = 'Friday' THEN '5 Friday'
+          WHEN ${TABLE}.day_name = 'Saturday' THEN '6 Saturday'
+          WHEN ${TABLE}.day_name = 'Sunday' THEN '7 Sunday'
+          ELSE NULL END ;;
   }
   dimension: hour {
     type: number
@@ -251,22 +258,22 @@ view: retail_media_offsite {
   }
   measure: event_Product_Added {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Added' THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Added', 'add-to-cart') THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_Product_Viewed {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Viewed' THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Viewed', 'product-view') THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN 1 ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought_total_price_local {
     type: sum
-    sql: CASE WHEN ${event_name} = 'Product Bought (Verified.v2)' THEN ${total_price_local} ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN ${total_price_local} ELSE NULL END ;;
     value_format: "$#,##0"
   }
   measure: max_quantity {
