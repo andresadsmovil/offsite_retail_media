@@ -16,8 +16,6 @@ persist_with: all_report_default_datagroup
 explore: bw_campaigns_lines {}
 
 
-# explore: retail_media_offsite {}
-
 
 
 explore: retail_media_offsite {
@@ -30,5 +28,3 @@ explore: retail_media_offsite {
   }
   # Dimensiones y medidas de productos
 }
-
-explore: report_retail_media_chiper {}
