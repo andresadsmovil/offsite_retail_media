@@ -25,6 +25,7 @@ explore: retail_media_offsite {
     view_label: "Saleforce"
     relationship: many_to_one
     sql_on: ${retail_media_offsite.campaign_id} = ${bw_campaigns_lines.campaign_id} ;;
+
   }
   # Dimensiones y medidas de productos
 }
