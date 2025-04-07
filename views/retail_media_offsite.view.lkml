@@ -258,17 +258,17 @@ view: retail_media_offsite {
   }
   measure: event_Product_Added {
     type: sum
-    sql: CASE WHEN ${event_name} in ('Product Added', 'add-to-cart') THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Added', 'add-to-cart') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_Product_Viewed {
     type: sum
-    sql: CASE WHEN ${event_name} in ('Product Viewed', 'product-view') THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Viewed', 'product-view') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought {
     type: sum
-    sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN 1 ELSE NULL END ;;
+    sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought_total_price_local {
