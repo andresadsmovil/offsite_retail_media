@@ -29,3 +29,5 @@ explore: retail_media_offsite {
   }
   # Dimensiones y medidas de productos
 }
+
+explore: retail_media_offsite_users {}
