@@ -256,6 +256,11 @@ view: retail_media_offsite {
     type: sum
     sql: ${unique_events} ;;
   }
+  measure: sum_new_users {
+    group_label: "Measures"
+    type: sum
+    sql:  ${TABLE}.new_users ;;
+  }
   measure: event_Product_Added {
     type: sum
     sql: CASE WHEN ${event_name} in ('Product Added', 'add-to-cart') THEN product_units ELSE NULL END ;;

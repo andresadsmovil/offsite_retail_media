@@ -13,6 +13,13 @@ view: retail_media_offsite_users {
     type: number
     sql: ${TABLE}.advertiser_internal_id ;;
   }
+  dimension_group: date_impression {
+    type: time
+    timeframes: [raw, date, week, month, quarter, year]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.date_impression ;;
+  }
   dimension: advertiser_name {
     type: string
     sql: ${TABLE}.advertiser_name ;;
