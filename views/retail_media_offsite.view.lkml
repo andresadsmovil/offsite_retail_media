@@ -22,8 +22,8 @@ view: retail_media_offsite {
     sql: ${TABLE}.advertiser_name ;;
   }
   dimension: campaign_id {
-    type: string
-    sql: CAST(${TABLE}.campaign_id AS STRING) ;;
+    type: number
+    sql: ${TABLE}.campaign_id ;;
   }
   dimension: campaign_name {
     type: string
@@ -195,10 +195,6 @@ view: retail_media_offsite {
     type: number
     sql: ${TABLE}.quantity ;;
   }
-  measure: count {
-    type: count
-    drill_fields: [category_name, product_name, event_name]
-  }
   measure: sum_investment {
     group_label: "Measures"
     type: sum
@@ -262,21 +258,25 @@ view: retail_media_offsite {
     sql:  ${TABLE}.new_users ;;
   }
   measure: event_Product_Added {
+    group_label: "Measures"
     type: sum
     sql: CASE WHEN ${event_name} in ('Product Added', 'add-to-cart') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_Product_Viewed {
+    group_label: "Measures"
     type: sum
     sql: CASE WHEN ${event_name} in ('Product Viewed', 'product-view') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought {
+    group_label: "Measures"
     type: sum
     sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN product_units ELSE NULL END ;;
     value_format: "#,##0"
   }
   measure: event_product_bought_total_price_local {
+    group_label: "Measures"
     type: sum
     sql: CASE WHEN ${event_name} in ('Product Bought (Verified.v2)', 'purchase') THEN ${total_price_local} ELSE NULL END ;;
     value_format: "$#,##0"
@@ -288,6 +288,7 @@ view: retail_media_offsite {
     value_format: "#,##0"
   }
   measure: max_cpm {
+    group_label: "Measures"
     type: number
     sql:
     case
@@ -299,6 +300,7 @@ view: retail_media_offsite {
     value_format: "$#,##0"
   }
   measure: max_cpc {
+    group_label: "Measures"
     type: number
     sql:
     case

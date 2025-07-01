@@ -26,6 +26,7 @@ view: retail_media_offsite_users {
   }
   dimension: campaign_id {
     type: number
+    primary_key: yes
     sql: ${TABLE}.campaign_id ;;
   }
   dimension: campaign_name {
@@ -58,12 +59,7 @@ view: retail_media_offsite_users {
   }
   measure: count {
     type: count
-    drill_fields: [product_name, trademark_name, campaign_name, event_name, advertiser_name]
-  }
-  measure: new_user {
-    group_label: "Measures"
-    type: sum
-    sql: ${TABLE}.new_user ;;
+    drill_fields: [campaign_name]
   }
   measure: new_user_Product_Added {
     type: sum
@@ -81,7 +77,6 @@ view: retail_media_offsite_users {
     value_format: "#,##0"
   }
   measure: product_units {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.product_units ;;
   }
@@ -101,9 +96,12 @@ view: retail_media_offsite_users {
     value_format: "#,##0"
   }
   measure: unique_user {
-    group_label: "Measures"
     type: sum
     sql: ${TABLE}.unique_user ;;
+  }
+  measure: ads_spend {
+    type: sum
+    sql: ${TABLE}.ads_spend ;;
   }
   measure:unique_user_Product_Added {
     type: sum
