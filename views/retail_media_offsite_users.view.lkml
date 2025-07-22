@@ -33,6 +33,10 @@ view: retail_media_offsite_users {
     type: string
     sql: ${TABLE}.campaign_name ;;
   }
+  dimension: account_name {
+    type: string
+    sql: ${TABLE}.account_name ;;
+  }
   dimension: cid {
     type: string
     sql: ${TABLE}.cid ;;
