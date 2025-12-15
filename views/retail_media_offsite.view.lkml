@@ -1,20 +1,4 @@
 
-# En el archivo de modelo (por ejemplo, 'retail_media.model')
-include: "retail_media_offsite.view" # Asegúrate de incluir la view
-
-explore: retail_media_offsite_explore {
-  from: retail_media_offsite # Referencia a la view que has compartido
-  persist_with: retail_media_daily_update # <-- ¡APLICACIÓN DE LA CACHÉ!
-
-  # Puedes añadir joins aquí si fuera necesario
-
-  # Filtro para limitar la consulta inicial, mejorando el rendimiento:
-  always_filter: {
-    filters: [date_purchase_date: "1 month ago for 1 month"]
-  }
-}
-
-
 view: retail_media_offsite {
 
   sql_table_name: `reports_generated.retail_media_offsite` ;;
