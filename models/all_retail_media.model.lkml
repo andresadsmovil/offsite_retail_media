@@ -15,7 +15,11 @@ persist_with: all_report_default_datagroup
 
 explore: bw_campaigns_lines {}
 
-explore: retail_media_offsite_users {}
+explore: retail_media_offsite_users {
+  persist_with: all_report_default_datagroup
+}
 
 
-explore: retail_media_offsite {}
+explore: retail_media_offsite {
+  persist_with: all_report_default_datagroup
+}
